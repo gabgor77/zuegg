@@ -1,21 +1,18 @@
-/*
-===============================================================================
-MIGRAZIONE COMPLETA A BOOTSTRAP — FOGLIO DI STILE INTEGRATIVO
-===============================================================================
-Il presente file ha funzione complementare rispetto al framework Bootstrap.
-L'obiettivo metodologico è il seguente:
-1. demandare a Bootstrap la gestione di griglia, spaziature, componenti e
-   responsività standard;
-2. conservare l'identità visiva originaria del progetto mediante variabili,
-   tipografia, cromie e micro-interazioni custom;
-3. ridurre la quantità di CSS strutturale proprietario, mantenendo soltanto
-   le regole necessarie alla personalizzazione semantica e grafica.
-===============================================================================
-*/
+/* =============================================================================
+   ZUEGG — FOGLIO DI STILE PULITO E COMPATIBILE CON BOOTSTRAP
+   -----------------------------------------------------------------------------
+   Il presente file sostituisce integralmente il precedente foglio di stile.
+   La logica compositiva adottata è la seguente:
+   1. Bootstrap governa layout, griglia responsive e componenti di base.
+   2. Il presente CSS rifinisce tipografia, identità visiva e sezioni custom.
+   3. La hero iniziale è costruita con immagine reale (<img>) e non con sfondo CSS,
+      così da consentire un controllo puntuale del taglio mediante object-fit e
+      object-position.
+   ========================================================================== */
 
-/* -------------------------------------------------------------------------- */
-/* 1. Sistema di variabili                                                     */
-/* -------------------------------------------------------------------------- */
+/* -----------------------------------------------------------------------------
+   1. VARIABILI CROMATICHE E SISTEMA DI BASE
+   -------------------------------------------------------------------------- */
 :root {
   --zuegg-blue: rgb(25, 42, 103);
   --zuegg-blue-rgb: 25, 42, 103;
@@ -23,47 +20,66 @@ L'obiettivo metodologico è il seguente:
   --zuegg-muted: #6b7280;
   --zuegg-surface: #ffffff;
   --zuegg-surface-soft: #f8f9fa;
-  --zuegg-border: rgba(var(--zuegg-blue-rgb), 0.12);
-  --zuegg-shadow: 0 0.75rem 1.5rem rgba(var(--zuegg-blue-rgb), 0.08);
+  --zuegg-border: rgba(25, 42, 103, 0.12);
+  --zuegg-shadow: 0 0.75rem 1.5rem rgba(25, 42, 103, 0.08);
   --zuegg-radius: 1rem;
+  --zuegg-background-image: url('../images/pattern.webp');
+  --zuegg-obiettivi-bg-image: url('../images/natura.jpeg'); 
 }
 
-/* -------------------------------------------------------------------------- */
-/* 2. Tipografia istituzionale                                                 */
-/* -------------------------------------------------------------------------- */
+/* -----------------------------------------------------------------------------
+   2. TIPOGRAFIA ISTITUZIONALE
+   -------------------------------------------------------------------------- */
 @font-face {
   font-family: 'zuegg-font';
   src: url('../fonts/polymath-font-family/PolymathDispDemo-Black.otf') format('opentype');
   font-display: swap;
 }
 
-/*
-La classe .text-zuegg viene mantenuta per garantire continuità semantica con il
-progetto originario. Essa si integra armonicamente con le utility native di
-Bootstrap, senza sostituirsi ad esse in modo invasivo.
-*/
+body {
+  color: var(--zuegg-text);
+  background-color: #ffffff;
+  overflow-x: hidden;
+  background-image: var(--zuegg-background-image);
+  
+}
+
 .text-zuegg {
   color: var(--zuegg-blue) !important;
   font-family: 'zuegg-font', sans-serif;
 }
 
-body {
-  color: var(--zuegg-text);
-  background-color: #fff;
+p,
+.lead,
+.section-copy {
+  line-height: 1.75;
 }
 
-/* -------------------------------------------------------------------------- */
-/* 3. Estensioni leggere del tema Bootstrap                                    */
-/* -------------------------------------------------------------------------- */
+/* -----------------------------------------------------------------------------
+   3. HEADER STICKY
+   -------------------------------------------------------------------------- */
+#header {
+  z-index: 1050;
+  background-color: #ffffff;
+}
+
+#logo {
+  max-height: 58px;
+  width: auto;
+}
+
+/* -----------------------------------------------------------------------------
+   4. ESTENSIONI LEGGERE DI BOOTSTRAP
+   -------------------------------------------------------------------------- */
 .btn-zuegg {
-  --bs-btn-color: #fff;
+  --bs-btn-color: #ffffff;
   --bs-btn-bg: var(--zuegg-blue);
   --bs-btn-border-color: var(--zuegg-blue);
-  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-color: #ffffff;
   --bs-btn-hover-bg: rgba(var(--zuegg-blue-rgb), 0.92);
   --bs-btn-hover-border-color: rgba(var(--zuegg-blue-rgb), 0.92);
   --bs-btn-focus-shadow-rgb: var(--zuegg-blue-rgb);
-  --bs-btn-active-color: #fff;
+  --bs-btn-active-color: #ffffff;
   --bs-btn-active-bg: rgba(var(--zuegg-blue-rgb), 0.85);
   --bs-btn-active-border-color: rgba(var(--zuegg-blue-rgb), 0.85);
 }
@@ -84,49 +100,185 @@ body {
   border-radius: var(--zuegg-radius) !important;
 }
 
-/* -------------------------------------------------------------------------- */
-/* 4. Hero section                                                             */
-/* -------------------------------------------------------------------------- */
-/*
-Bootstrap gestisce allineamenti, contenitori e spaziature mediante le proprie
-utility; questa regola conserva esclusivamente l'immagine di sfondo e la quota
-visiva minima necessaria all'effetto hero originario.
-*/
-.hero-container,
-.hero-section {
-  min-height: 400px;
-  background: linear-gradient(rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.28)),
-              url('../images/pesche-1.jpg') no-repeat center center / cover;
+/* -----------------------------------------------------------------------------
+   5. HERO INIZIALE
+   -------------------------------------------------------------------------- */
+.hero-top .hero-img {
+  width: 100%;
+  height: 335px;
+  display: block;
+  object-fit: cover;
+  object-position: center 32%;
 }
 
-/* -------------------------------------------------------------------------- */
-/* 5. Card e componenti contenitive                                            */
-/* -------------------------------------------------------------------------- */
-.card {
-  border: 1px solid var(--zuegg-border);
-  border-radius: var(--zuegg-radius);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.hero-top .hero-box {
+  min-height: 165px;
+  background-color: rgba(80, 80, 80, 0.14);
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
+  
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--zuegg-shadow);
+.hero-top .hero-title {
+  font-family: 'zuegg-font', sans-serif;
+  font-size: clamp(2.2rem, 3vw, 3.6rem);
+  color: var(--zuegg-blue);
+  line-height: 1;
 }
 
-.card-title,
+.hero-top .hero-subtitle {
+  font-size: clamp(1.1rem, 1.5vw, 1.55rem);
+  line-height: 1.35;
+}
+
+/* -----------------------------------------------------------------------------
+   6. TITOLI E BLOCCHI TESTUALI
+   -------------------------------------------------------------------------- */
+#titoli h1,
+#titoli2 h2,
 .section-title,
-.display-zuegg {
+.display-zuegg,
+.card-title {
   color: var(--zuegg-blue);
   font-family: 'zuegg-font', sans-serif;
 }
 
-/* -------------------------------------------------------------------------- */
-/* 6. Sezioni testuali e leggibilità                                           */
-/* -------------------------------------------------------------------------- */
-.section-copy,
-.lead,
-p {
-  line-height: 1.75;
+#titoli,
+#titoli2,
+#paragrafi,
+#paragrafi2 {
+  text-align: center;
 }
 
-.text-muted-custom {
+#paragrafi p,
+#paragrafi2 p {
+  margin-bottom: 1rem;
+}
+/*------------
+OBIETTIVI
+---------
+
+/*inizio sezione multicolonna*/
+#obiettivi-section {
+    font-size: 16px; /* grandezza del testo */
+    font-family:'montserrat-plan', sans-serif;/*applicazione del font del @font-face*/
+    padding: 20px;
+    background-image: var(--zuegg-obiettivi-bg-image); /* Immagine di sfondo */
+    border: 1.5px solid var(--zuegg-blue);
+    background-color: #f9f7f2; /* Colore di sfondo tenue come nell'immagine */
+    text-align: center;
+}
+
+
+.obiettivi-container {
+    display: flex; /* Mette le colonne una accanto all'altra */
+    justify-content: space-around; /* Distanzia le colonne tra loro */
+    align-items: flex-start; /* Allinea il testo in alto */
+    gap: 40px; /* Spazio tra le due colonne */
+    margin-top: 30px;
+}
+
+.colonna-obiettivi {
+    flex: 1; /* Entrambe le colonne occupano lo stesso spazio */
+    text-align: left; /* Il testo dentro la colonna resta a sinistra */
+}
+
+.colonna-obiettivi img {
+    width: 100px; /* Imposta la dimensione dell'icona */
+    margin-bottom: 20px;
+}
+/*fine sezione multicolonna*/
+/* -----------------------------------------------------------------------------
+   7. CARD E COMPONENTI CONTENITIVE
+   -------------------------------------------------------------------------- */
+.card,
+.z-card {
+  border: 1px solid var(--zuegg-border);
+  border-radius: var(--zuegg-radius);
+  transition: transform 0.3s 
+  }
+/* ----------------------------------------------------------------------------- */
+/* CARD AGENDA 2030                                                              */
+/* ----------------------------------------------------------------------------- */
+
+.z-card {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 1.75rem;
+  overflow: hidden;
+  background-color: #efefef;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+.z-card-header,
+.z-card-header-a,
+.z-card-header-b {
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.z-card-header img,
+.z-card-header-a img,
+.z-card-header-b img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.z-card-body {
+  background-color: #f3f3f3;
+  padding: 1.5rem 1.35rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  flex: 1 1 auto;
+}
+
+.z-card-body h3 {
+  min-height: 100px;
+  margin-bottom: 1.5rem;
+  color: var(--zuegg-blue);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 700;
+  text-align: center;
+}
+
+.z-card-body #paragrafi2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex: 1 1 auto;
+}
+
+.z-card-body #paragrafi2 p {
+  margin-bottom: 0;
+  color: #1f1f1f;
+  font-size: 0.98rem;
+  line-height: 1.9;
+  text-align: center;
+}
+
+/* Colori intestazioni card */
+.color-1a { background-color: #d8a62c; }
+.color-2a { background-color: #c61b2c; }
+.color-3a { background-color: #33b5db; }
+.color-4a { background-color: #e5672f; }
+
+.color-1b { background-color: #e5672f; }
+.color-2b { background-color: #bf8d24; }
+.color-3b { background-color: #3f8343; }
+.color-4b { background-color: #63b33e; }
+
+@media (max-width: 991.98px) {
+  .z-card-body h3 {
+    min-height: auto;
+  }
+}
