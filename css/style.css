@@ -164,7 +164,6 @@ OBIETTIVI
     padding: 20px;
     background-image: var(--zuegg-obiettivi-bg-image); /* Immagine di sfondo */
     border: 1.5px solid var(--zuegg-blue);
-    background-color: #f9f7f2; /* Colore di sfondo tenue come nell'immagine */
     text-align: center;
 }
 
