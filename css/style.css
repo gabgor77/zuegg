@@ -103,12 +103,29 @@ p,
 /* -----------------------------------------------------------------------------
    5. HERO INIZIALE
    -------------------------------------------------------------------------- */
-.hero-top .hero-img {
+.hero-top {
   width: 100%;
   height: 335px;
   display: block;
   object-fit: cover;
   object-position: center 32%;
+}
+
+.hero-img {
+  width: 100%;
+  
+  display: block;
+    /* Imposta l'altezza minima per i dispositivi più piccoli (mobile) */
+    min-height: 250px; 
+    
+    /* Forza l'immagine a comportarsi come uno sfondo: si taglia ma NON si deforma */
+    object-fit: cover;
+    
+    /* Tiene il centro dell'immagine (le pesche) sempre a fuoco al centro */
+    object-position: center; 
+    
+    /* Su desktop l'altezza si adatterà automaticamente alla larghezza */
+    height: auto; 
 }
 
 .hero-top .hero-box {
