@@ -171,40 +171,6 @@ p,
 #paragrafi2 p {
   margin-bottom: 1rem;
 }
-/*------------
-OBIETTIVI
----------
-
-/*inizio sezione multicolonna*/
-#obiettivi-section {
-    font-size: 16px; /* grandezza del testo */
-    font-family:'montserrat-plan', sans-serif;/*applicazione del font del @font-face*/
-    padding: 20px;
-    background-image: var(--zuegg-obiettivi-bg-image); /* Immagine di sfondo */
-    border: 1.5px solid var(--zuegg-blue);
-    text-align: center;
-}
-
-
-.obiettivi-container {
-    display: flex; /* Mette le colonne una accanto all'altra */
-    justify-content: space-around; /* Distanzia le colonne tra loro */
-    align-items: flex-start; /* Allinea il testo in alto */
-    gap: 40px; /* Spazio tra le due colonne */
-    margin-top: 30px;
-}
-
-.colonna-obiettivi {
-    flex: 1; /* Entrambe le colonne occupano lo stesso spazio */
-    text-align: left; /* Il testo dentro la colonna resta a sinistra */
-}
-
-.colonna-obiettivi img {
-    width: 100px; /* Imposta la dimensione dell'icona */
-    margin-bottom: 20px;
-}
-/*fine sezione multicolonna*/
-
 
 /* -----------------------------------------------------------------------------
    PUZZLE
@@ -268,6 +234,42 @@ OBIETTIVI
   justify-content: flex-start;
   flex: 1 1 auto;
 }
+
+/*------------
+OBIETTIVI
+---------
+
+/*inizio sezione multicolonna*/
+#obiettivi-section {
+    font-size: 16px; /* grandezza del testo */
+    font-family:'montserrat-plan', sans-serif;/*applicazione del font del @font-face*/
+    padding: 20px;
+    background-image: var(--zuegg-obiettivi-bg-image); /* Immagine di sfondo */
+    border: 1.5px solid var(--zuegg-blue);
+    text-align: center;
+}
+
+
+.obiettivi-container {
+    display: flex; /* Mette le colonne una accanto all'altra */
+    justify-content: space-around; /* Distanzia le colonne tra loro */
+    align-items: flex-start; /* Allinea il testo in alto */
+    gap: 40px; /* Spazio tra le due colonne */
+    margin-top: 30px;
+}
+
+.colonna-obiettivi {
+    flex: 1; /* Entrambe le colonne occupano lo stesso spazio */
+    text-align: left; /* Il testo dentro la colonna resta a sinistra */
+}
+
+.colonna-obiettivi img {
+    width: 100px; /* Imposta la dimensione dell'icona */
+    margin-bottom: 20px;
+}
+/*fine sezione multicolonna*/
+
+
 
 /* -----------------------------------------------------------------------------
    CARD E COMPONENTI CONTENITIVE
