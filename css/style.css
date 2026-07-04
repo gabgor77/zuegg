@@ -25,6 +25,7 @@
   --zuegg-radius: 1rem;
   --zuegg-background-image: url('../images/pattern.webp');
   --zuegg-obiettivi-bg-image: url('../images/natura.jpeg'); 
+  --puzzle-radius: 0.5rem;
 }
 
 /* -----------------------------------------------------------------------------
@@ -203,8 +204,73 @@ OBIETTIVI
     margin-bottom: 20px;
 }
 /*fine sezione multicolonna*/
+
+
 /* -----------------------------------------------------------------------------
-   7. CARD E COMPONENTI CONTENITIVE
+   PUZZLE
+   -------------------------------------------------------------------------- */
+.puzzle
+.z-puzzle
+{
+  
+  border-radius: var(--puzzle-radius);
+  transition: transform 0.3s 
+  }
+
+.z-puzzle-body {
+  
+  padding: 1.5rem 1.35rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  flex: 1 1 auto;
+}
+
+.z-puzzle-header,
+ {
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.z-puzzle-header img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.z-puzzle-body {
+  
+  padding: 1.5rem 1.35rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  flex: 1 1 auto;
+}
+
+.z-puzzle-body h3 {
+  min-height: 100px;
+  margin-bottom: 0rem;
+  color: var(--zuegg-blue);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  font-weight: 700;
+  text-align: center;
+}
+
+.z-puzzle-body #paragrafi2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex: 1 1 auto;
+}
+
+/* -----------------------------------------------------------------------------
+   CARD E COMPONENTI CONTENITIVE
    -------------------------------------------------------------------------- */
 .card,
 .z-card {
