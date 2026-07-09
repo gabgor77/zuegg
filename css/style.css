@@ -158,6 +158,7 @@ p,
 .card-title {
   color: var(--zuegg-blue);
   font-family: 'zuegg-font', sans-serif;
+  margin-bottom: 2rem;
 }
 
 #titoli,
@@ -175,24 +176,17 @@ p,
 /* -----------------------------------------------------------------------------
    PUZZLE
    -------------------------------------------------------------------------- */
+
+
 .puzzle
 .z-puzzle
 {
-  
+  display: flex;
   border-radius: var(--puzzle-radius);
   transition: transform 0.3s 
   }
 
-.z-puzzle-body {
-  
-  padding: 1.5rem 1.35rem 1.75rem;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  flex: 1 1 auto;
-}
-
-.z-puzzle-header,
+.z-puzzle-header
  {
   min-height: 220px;
   display: flex;
@@ -241,6 +235,9 @@ OBIETTIVI
 
 /*inizio sezione multicolonna*/
 #obiettivi-section {
+  width: 90%;
+  margin: 0 auto; /* 0 sopra/sotto, auto destra/sinistra */
+  
     font-size: 16px; /* grandezza del testo */
     font-family:'montserrat-plan', sans-serif;/*applicazione del font del @font-face*/
     padding: 20px;
@@ -251,6 +248,8 @@ OBIETTIVI
 
 
 .obiettivi-container {
+    
+    
     display: flex; /* Mette le colonne una accanto all'altra */
     justify-content: space-around; /* Distanzia le colonne tra loro */
     align-items: flex-start; /* Allinea il testo in alto */
@@ -259,7 +258,7 @@ OBIETTIVI
 }
 
 .colonna-obiettivi {
-    flex: 1; /* Entrambe le colonne occupano lo stesso spazio */
+    flex: 1; /* Le colonne occupano lo stesso spazio */
     text-align: left; /* Il testo dentro la colonna resta a sinistra */
 }
 
