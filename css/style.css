@@ -1,17 +1,9 @@
 /* =============================================================================
-   ZUEGG — FOGLIO DI STILE PULITO E COMPATIBILE CON BOOTSTRAP
-   -----------------------------------------------------------------------------
-   Il presente file sostituisce integralmente il precedente foglio di stile.
-   La logica compositiva adottata è la seguente:
-   1. Bootstrap governa layout, griglia responsive e componenti di base.
-   2. Il presente CSS rifinisce tipografia, identità visiva e sezioni custom.
-   3. La hero iniziale è costruita con immagine reale (<img>) e non con sfondo CSS,
-      così da consentire un controllo puntuale del taglio mediante object-fit e
-      object-position.
+   ======================ZUEGG — SOSTENIBILITA'=================================
    ========================================================================== */
 
 /* -----------------------------------------------------------------------------
-   1. VARIABILI CROMATICHE E SISTEMA DI BASE
+   SEZIONE PERSONALIZZAZIONE CROMATICHE E DI SISTEMA
    -------------------------------------------------------------------------- */
 :root {
   --zuegg-blue: rgb(25, 42, 103);
@@ -29,7 +21,7 @@
 }
 
 /* -----------------------------------------------------------------------------
-   2. TIPOGRAFIA ISTITUZIONALE
+   SEZIONE BRANDIZZAZIONE
    -------------------------------------------------------------------------- */
 @font-face {
   font-family: 'zuegg-font';
@@ -42,7 +34,6 @@ body {
   background-color: #ffffff;
   overflow-x: hidden;
   background-image: var(--zuegg-background-image);
-  
 }
 
 .text-zuegg {
@@ -57,7 +48,7 @@ p,
 }
 
 /* -----------------------------------------------------------------------------
-   3. HEADER STICKY
+   LOGO HEADER STICKY
    -------------------------------------------------------------------------- */
 #header {
   z-index: 1050;
@@ -70,9 +61,9 @@ p,
 }
 
 /* -----------------------------------------------------------------------------
-   4. ESTENSIONI LEGGERE DI BOOTSTRAP
+   ESTENSIONI LEGGERE DI BOOTSTRAP
    -------------------------------------------------------------------------- */
-.btn-zuegg {
+/*.btn-zuegg {
   --bs-btn-color: #ffffff;
   --bs-btn-bg: var(--zuegg-blue);
   --bs-btn-border-color: var(--zuegg-blue);
@@ -99,10 +90,10 @@ p,
 
 .rounded-zuegg {
   border-radius: var(--zuegg-radius) !important;
-}
+}*/
 
 /* -----------------------------------------------------------------------------
-   5. HERO INIZIALE
+   SEZIONE HERO
    -------------------------------------------------------------------------- */
 .hero-top {
   width: 100%;
@@ -133,7 +124,6 @@ p,
   min-height: 165px;
   background-color: rgba(80, 80, 80, 0.14);
   border: 1.5px solid rgba(255, 255, 255, 0.85);
-  
 }
 
 .hero-top .hero-title {
@@ -141,6 +131,7 @@ p,
   font-size: clamp(2.2rem, 3vw, 3.6rem);
   color: var(--zuegg-blue);
   line-height: 1;
+  text-decoration: underline;
 }
 
 .hero-top .hero-subtitle {
@@ -149,20 +140,35 @@ p,
 }
 
 /* -----------------------------------------------------------------------------
-   6. TITOLI E BLOCCHI TESTUALI
+   SEZIONE TITOLI E TESTI
    -------------------------------------------------------------------------- */
 #titoli h1,
-#titoli2 h2,
+#titoli h2,
+#titoli h3,
 .section-title,
-.display-zuegg,
-.card-title {
+.disp
+{
   color: var(--zuegg-blue);
   font-family: 'zuegg-font', sans-serif;
   margin-bottom: 2rem;
+  text-align: center;
+}
+
+#titoli h1 
+{
+  text-decoration: underline;
+}
+
+#titoli h4
+{
+  color: var(--zuegg-blue);
+  font-weight:semibold;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 2rem;
+  text-align: center;
 }
 
 #titoli,
-#titoli2,
 #paragrafi,
 #paragrafi2 {
   text-align: center;
@@ -172,25 +178,37 @@ p,
 #paragrafi2 p {
   margin-bottom: 1rem;
 }
-/*-------------------------------------------------------------------------------
-  I risultati del 2024
-  -----------------------------------------------------------------------------*/
-.kpi
 
-
+/*-------------------------------------------------------------------------------*/
+  SEZIONE SOSTENIBILITA' IN BREVE
+/*-----------------------------------------------------------------------------*/
+.breve,
+.breve-card
+{
+  border: 1px solid var(--zuegg-border);
+  border-radius: 1.75rem;
+  transition: transform 0.3s ;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-image: var(--zuegg-obiettivi-bg-image); /* Immagine di sfondo delle card */
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1.35rem 1.75rem;
+}
 
 /* -----------------------------------------------------------------------------
-   PUZZLE
+   SEZIONE PUZZLE
    -------------------------------------------------------------------------- */
-
-
 .puzzle
 .z-puzzle
 {
   display: flex;
   border-radius: var(--puzzle-radius);
-  transition: transform 0.3s 
-  }
+  transition: transform 0.3s;
+}
 
 .z-puzzle-header
  {
@@ -209,8 +227,7 @@ p,
 }
 
 .z-puzzle-body {
-  
-  padding: 1.5rem 1.35rem 1.75rem;
+  padding: 0.1rem 0.3rem 0.75rem;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -218,44 +235,43 @@ p,
 }
 
 .z-puzzle-body h3 {
-  min-height: 100px;
+  min-height: 60px;
   margin-bottom: 0rem;
   color: var(--zuegg-blue);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Century Gothic", AppleGothic, sans-serif;
   font-size: 0.8rem;
   line-height: 1.5;
-  font-weight: 700;
+  font-weight: bold;
   text-align: center;
 }
 
 .z-puzzle-body #paragrafi2 {
+  font-family: "times new roman", Helvetica, sans-serif;
+  font-size: 0.9rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   flex: 1 1 auto;
 }
 
-/*------------
-OBIETTIVI
----------
-
-/*inizio sezione multicolonna*/
-#obiettivi-section {
+/* -----------------------------------------------------------------------------
+   SEZIONE OBIETTIVI
+   -------------------------------------------------------------------------- */
+#obiettivi-section 
+{
   width: 90%;
   margin: 0 auto; /* 0 sopra/sotto, auto destra/sinistra */
-  
-    font-size: 16px; /* grandezza del testo */
-    font-family:'montserrat-plan', sans-serif;/*applicazione del font del @font-face*/
-    padding: 20px;
-    background-image: var(--zuegg-obiettivi-bg-image); /* Immagine di sfondo */
-    border: 1.5px solid var(--zuegg-blue);
-    text-align: center;
+  font-size: 16px; /* grandezza del testo */
+  font-family:'montserrat-plan', sans-serif;/*applicazione del font del @font-face*/
+  padding: 20px;
+  background-image: var(--zuegg-obiettivi-bg-image); /* Immagine di sfondo */
+  border: 1.5px solid var(--zuegg-blue);
+  text-align: center;
 }
 
-
-.obiettivi-container {
-    
-    
+.obiettivi-container 
+{
+        
     display: flex; /* Mette le colonne una accanto all'altra */
     justify-content: space-around; /* Distanzia le colonne tra loro */
     align-items: flex-start; /* Allinea il testo in alto */
@@ -263,33 +279,31 @@ OBIETTIVI
     margin-top: 30px;
 }
 
-.colonna-obiettivi {
+.colonna-obiettivi 
+{
     flex: 1; /* Le colonne occupano lo stesso spazio */
     text-align: left; /* Il testo dentro la colonna resta a sinistra */
 }
 
-.colonna-obiettivi img {
+.colonna-obiettivi img 
+{
     width: 100px; /* Imposta la dimensione dell'icona */
     margin-bottom: 20px;
 }
-/*fine sezione multicolonna*/
-
-
 
 /* -----------------------------------------------------------------------------
-   CARD E COMPONENTI CONTENITIVE
+   SEZIONE CARD E COMPONENTI CONTENITIVE
    -------------------------------------------------------------------------- */
 .card,
-.z-card {
+.z-card 
+{
   border: 1px solid var(--zuegg-border);
   border-radius: var(--zuegg-radius);
   transition: transform 0.3s 
-  }
-/* ----------------------------------------------------------------------------- */
-/* CARD AGENDA 2030                                                              */
-/* ----------------------------------------------------------------------------- */
+}
 
-.z-card {
+.z-card 
+{
   width: 100%;
   height: 100%;
   border: 0;
@@ -303,7 +317,8 @@ OBIETTIVI
 
 .z-card-header,
 .z-card-header-a,
-.z-card-header-b {
+.z-card-header-b 
+{
   min-height: 220px;
   display: flex;
   align-items: center;
@@ -313,14 +328,16 @@ OBIETTIVI
 
 .z-card-header img,
 .z-card-header-a img,
-.z-card-header-b img {
+.z-card-header-b img 
+{
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-.z-card-body {
+.z-card-body 
+{
   background-color: #f3f3f3;
   padding: 1.5rem 1.35rem 1.75rem;
   display: flex;
@@ -329,7 +346,8 @@ OBIETTIVI
   flex: 1 1 auto;
 }
 
-.z-card-body h3 {
+.z-card-body h3 
+{
   min-height: 100px;
   margin-bottom: 1.5rem;
   color: var(--zuegg-blue);
@@ -340,14 +358,16 @@ OBIETTIVI
   text-align: center;
 }
 
-.z-card-body #paragrafi2 {
+.z-card-body #paragrafi2 
+{
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   flex: 1 1 auto;
 }
 
-.z-card-body #paragrafi2 p {
+.z-card-body #paragrafi2 p 
+{
   margin-bottom: 0;
   color: #1f1f1f;
   font-size: 0.98rem;
@@ -366,8 +386,46 @@ OBIETTIVI
 .color-3b { background-color: #3f8343; }
 .color-4b { background-color: #63b33e; }
 
-@media (max-width: 991.98px) {
-  .z-card-body h3 {
+@media (max-width: 991.98px) 
+{
+  .z-card-body h3 
+  {
     min-height: auto;
   }
 }
+
+/* -----------------------------------------------------------------------------
+   SEZIONE DOWNLOAD
+   -------------------------------------------------------------------------- */
+
+/* Rimuove i punti elenco standard e azzera i margini */
+.download-list 
+{
+  list-style: none;
+  margin: 0;
+  }
+
+/* Stile base per tutte le righe */
+.download-list li 
+{
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.08);
+  padding: 14px 20px;
+  background-color: #f3f3f3;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 1.5rem;
+}
+
+/* Effetto al passaggio del mouse su qualsiasi riga */
+.download-list li:hover 
+{
+  background-color: #81e3f02f;
+  color: var(--zuegg-blue);
+  font-weight: bold;
+  border: 1px solid var(--zuegg-blue);
+}
+
+/* -----------------------------------------------------------------------------FINE-------------------------------------------------------------------------- */
+
