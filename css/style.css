@@ -179,6 +179,7 @@ p,
   margin-bottom: 1rem;
 }
 
+
 /*-------------------------------------------------------------------------------*/
   SEZIONE SOSTENIBILITA' IN BREVE
 /*-----------------------------------------------------------------------------*/
@@ -427,5 +428,39 @@ p,
   border: 1px solid var(--zuegg-blue);
 }
 
+.btn-download {
+  /* Layout e posizionamento */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px; /* Spazio tra icona e testo */
+
+  /* Aspetto del pulsante */
+  background-color: #0066cc;
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none; /* Rimuove la sottolineatura dal link */
+  font-family: system-ui, -apple-system, sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+
+  /* Transizione fluida per l'effetto hover */
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Effetto al passaggio del mouse */
+.btn-download:hover {
+  background-color: var(--zuegg-blue);
+  color:  #f3f3f3;
+  transform: translateY(-2px); /* Effetto "sollevamento" */
+  
+}
+
+/* Effetto al click */
+.btn-download:active {
+  transform: translateY(0);
+}
 /* -----------------------------------------------------------------------------FINE-------------------------------------------------------------------------- */
 
