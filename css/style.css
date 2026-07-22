@@ -5,462 +5,424 @@
 /* -----------------------------------------------------------------------------
    SEZIONE PERSONALIZZAZIONE CROMATICHE E DI SISTEMA
    -------------------------------------------------------------------------- */
-:root {
-  --zuegg-blue: rgb(25, 42, 103);
-  --zuegg-blue-rgb: 25, 42, 103;
-  --zuegg-text: #1f2937;
-  --zuegg-muted: #6b7280;
-  --zuegg-surface: #ffffff;
-  --zuegg-surface-soft: #f8f9fa;
-  --zuegg-border: rgba(25, 42, 103, 0.12);
-  --zuegg-shadow: 0 0.75rem 1.5rem rgba(25, 42, 103, 0.08);
-  --zuegg-radius: 1rem;
-  --zuegg-background-image: url('../images/pattern.webp');
-  --zuegg-obiettivi-bg-image: url('../images/natura.jpeg'); 
-  --puzzle-radius: 0.5rem;
+:root {                                                           /* Inizio delle variabili CSS globali custom property*/
+  --zuegg-blue: rgb(25, 42, 103);                               /* Colore blu principale del brand */
+  --zuegg-blue-rgb: 25, 42, 103;                                  /* Colore blu in formato RGB per opacità */
+  --zuegg-text: #1f2937;                                        /* Colore principale per il testo */
+  --zuegg-muted: #6b7280;                                       /* Colore secondario o attenuato per testi */
+  --zuegg-surface: #ffffff;                                     /* Colore di sfondo delle superfici */
+  --zuegg-surface-soft: #f8f9fa;                                /* Colore di sfondo tenue/alternativo */
+  --zuegg-border: rgba(25, 42, 103, 0.12);                      /* Colore per i bordi basato sul blu brand */ 
+  --zuegg-shadow: 0 0.75rem 1.5rem rgba(25, 42, 103, 0.08);     /* Ombra personalizzata */
+  --zuegg-radius: 1rem;                                           /* Raggio di arrotondamento standard */
+  --zuegg-background-image: url('../images/pattern.webp');        /* Immagine di sfondo generale */
+  --zuegg-obiettivi-bg-image: url('../images/natura.jpeg');       /* Immagine di sfondo per la sezione obiettivi */
+  --puzzle-radius: 0.5rem;                                        /* Raggio di arrotondamento specifico per i puzzle */
+  --background-card: #f3f3f3;                                   /* colore di sfondo delle card */
 }
 
 /* -----------------------------------------------------------------------------
    SEZIONE BRANDIZZAZIONE
    -------------------------------------------------------------------------- */
-@font-face {
-  font-family: 'zuegg-font';
-  src: url('../fonts/polymath-font-family/PolymathDispDemo-Black.otf') format('opentype');
-  font-display: swap;
+@font-face {                                                      /* Dichiarazione di un font personalizzato */
+  font-family: 'zuegg-font';                                      /* Nome assegnato al font */
+  src: url('../fonts/polymath-font-family/PolymathDispDemo-Black.otf') format('opentype');    /* Percorso e formato del file font */
+  font-display: swap;                                             /* Ottimizzazione del caricamento del testo */
 }
 
-body {
-  color: var(--zuegg-text);
-  background-color: #ffffff;
-  overflow-x: hidden;
-  background-image: var(--zuegg-background-image);
+body {                                                            /* Selettore per il corpo della pagina */
+  color: var(--zuegg-text);                                       /* Imposta il colore del testo predefinito */
+  background-color: #ffffff;                                    /* Imposta il colore di sfondo bianco */
+  overflow-x: hidden;                                              /* Nasconde lo scorrimento orizzontale indesiderato */
+  background-image: var(--zuegg-background-image);                  /* Applica l'immagine di sfondo globale */
 }
 
-.text-zuegg {
-  color: var(--zuegg-blue) !important;
-  font-family: 'zuegg-font', sans-serif;
+.text-zuegg {                                                   /* Classe di utilità per testi brandizzati */
+  color: var(--zuegg-blue) !important;                          /* Forza l'applicazione del colore blu brand in maniera prioritaria*/
+  font-family: 'zuegg-font', sans-serif;                        /* Applica il font personalizzato */
 }
 
-p,
-.lead,
-.section-copy {
-  line-height: 1.75;
+p,                                                              /* Selettore multiplo: paragrafi */
+.lead,                                                            /* Selettore multiplo: testi in evidenza */
+.section-copy {                                                  /* Selettore multiplo: copie di sezione */
+  line-height: 1.75;                                                 /* Imposta l'altezza della riga per leggibilità */
 }
 
 /* -----------------------------------------------------------------------------
    LOGO HEADER STICKY
    -------------------------------------------------------------------------- */
-#header {
-  z-index: 1050;
-  background-image: var(--zuegg-background-image);
-}
+#header {                                                     /* Selettore per l'intestazione della pagina */
+  z-index: 1050;                                              /* Imposta la priorità di sovrapposizione */
+  background-image: var(--zuegg-background-image);            /* Applica lo sfondo all'header */
+}                                                             
 
-#logo {
-  max-height: 58px;
-  width: auto;
+#logo {                                                         /* Selettore per il logo */
+  max-height: 58px;                                              /* Limita l'altezza massima del logo */
+  width: auto;                                                     /* Mantiene le proporzioni larghezza automatica */
 }
-
-/* -----------------------------------------------------------------------------
-   ESTENSIONI LEGGERE DI BOOTSTRAP
-   -------------------------------------------------------------------------- */
-/*.btn-zuegg {
-  --bs-btn-color: #ffffff;
-  --bs-btn-bg: var(--zuegg-blue);
-  --bs-btn-border-color: var(--zuegg-blue);
-  --bs-btn-hover-color: #ffffff;
-  --bs-btn-hover-bg: rgba(var(--zuegg-blue-rgb), 0.92);
-  --bs-btn-hover-border-color: rgba(var(--zuegg-blue-rgb), 0.92);
-  --bs-btn-focus-shadow-rgb: var(--zuegg-blue-rgb);
-  --bs-btn-active-color: #ffffff;
-  --bs-btn-active-bg: rgba(var(--zuegg-blue-rgb), 0.85);
-  --bs-btn-active-border-color: rgba(var(--zuegg-blue-rgb), 0.85);
-}
-
-.bg-zuegg {
-  background-color: var(--zuegg-blue) !important;
-}
-
-.border-zuegg-soft {
-  border: 1px solid var(--zuegg-border) !important;
-}
-
-.shadow-zuegg {
-  box-shadow: var(--zuegg-shadow) !important;
-}
-
-.rounded-zuegg {
-  border-radius: var(--zuegg-radius) !important;
-}*/
 
 /* -----------------------------------------------------------------------------
    SEZIONE HERO
    -------------------------------------------------------------------------- */
-.hero-top {
-  width: 100%;
-  min-height: 250px;
-  display: block;
-  object-fit: cover;
-  object-position: center 32%;
+.hero-top {                                                            /* Contenitore superiore della hero */
+  width: 100%;                                        /* Occupa l'intera larghezza disponibile */
+  min-height: 250px;                                   /* Altezza minima garantita */
+  display: block;                                      /* Imposta l'elemento come blocco */
+  object-fit: cover;                                   /* Adatta l'oggetto coprendo l'area */
+  object-position: center 32%;                          /* Posiziona l'immagine focalizzandosi sul punto specifico */
 }
 
-.hero-img {
-  width: 100%;
-  
-  display: block;
-    /* Imposta l'altezza minima per i dispositivi più piccoli (mobile) */
-    min-height: 250px; 
-    
-    /* Forza l'immagine a comportarsi come uno sfondo: si taglia ma NON si deforma */
-    object-fit: cover;
-    
-    /* Tiene il centro dell'immagine (le pesche) sempre a fuoco al centro */
-    object-position: center; 
-    
-    /* Su desktop l'altezza si adatterà automaticamente alla larghezza */
-    height: auto; 
+.hero-img {                                             /* Immagine principale della hero */
+  width: 100%;                                            /* Larghezza piena al 100% */
+  display: block;                                      /* Rende l'immagine un blocco */
+  min-height: 250px;                                 /* Imposta l'altezza minima per i dispositivi più piccoli (mobile) */
+  object-fit: cover;                              /* Forza l'immagine a comportarsi come uno sfondo: si taglia ma NON si deforma */
+  object-position: center;                        /* Tiene il centro dell'immagine (le pesche) sempre a fuoco al centro */
+  height: auto;                                   /* Su desktop l'altezza si adatterà automaticamente alla larghezza */
 }
 
-.hero-top .hero-box {
-  min-height: 165px;
-  background-color: rgba(80, 80, 80, 0.14);
-  border: 1.5px solid rgba(255, 255, 255, 0.85);
+.hero-top .hero-box {                                   /* Box interno alla sezione hero-top */
+  min-height: 165px;                                   /* Altezza minima del box */
+  background-color: rgba(80, 80, 80, 0.14);            /* Sfondo grigio semitrasparente */
+  border: 1.5px solid rgba(255, 255, 255, 0.85);       /* Bordo bianco semi-opaco */
 }
 
-.hero-top .hero-title {
-  font-family: 'zuegg-font', sans-serif;
-  font-size: clamp(2.2rem, 3vw, 3.6rem);
-  color: var(--zuegg-blue);
-  line-height: 1;
-  text-decoration: underline;
+.hero-top .hero-title {                                 /* Titolo principale all'interno della hero */                              
+  font-family: 'zuegg-font', sans-serif;               /* Applica il font brandizzato */
+  font-size: clamp(2.2rem, 3vw, 3.6rem);               /* Dimensione del testo fluida e reattiva */
+  color: var(--zuegg-blue);                            /* Colore del testo blu brand */
+  line-height: 1;                                      /* Altezza della riga compatta */
+  text-decoration: underline;                          /* Sottolinea il testo del titolo */
 }
 
-.hero-top .hero-subtitle {
-  font-size: clamp(1.1rem, 1.5vw, 1.55rem);
+.hero-top .hero-subtitle {                             /* Sottotitolo all'interno della hero */
+  font-size: clamp(1.1rem, 1.5vw, 1.55rem);              /* Dimensione fluida per il sottotitolo */
   line-height: 1.35;
 }
 
 /* -----------------------------------------------------------------------------
    SEZIONE TITOLI E TESTI
    -------------------------------------------------------------------------- */
-#titoli h1,
-#titoli h2,
-#titoli h3,
-.section-title,
-.disp
+.titoli h1,                                            /* Selettore multiplo: intestazioni h1 */
+.titoli h2,                                            /* Selettore multiplo: intestazioni h2 */
+.titoli h3,                                            /* Selettore multiplo: intestazioni h3 */
+.section-title,                                        /* Selettore multiplo: titoli di sezione */
+.disp                                                   /* Selettore multiplo: classe .disp */
 {
-  color: var(--zuegg-blue);
-  font-family: 'zuegg-font', sans-serif;
-  margin-bottom: 2rem;
-  text-align: center;
+  color: var(--zuegg-blue);                            /* Imposta il colore blu del brand */
+  font-family: 'zuegg-font', sans-serif;               /* Applica il font personalizzato */
+  margin-bottom: 2rem;                                 /* Aggiunge spazio inferiore */
+  text-align: center;                                  /* Allinea il testo al centro */
 }
 
-#titoli h1 
+.titoli h1                                              /* Sotto-selettore h1 dentro .titoli */
 {
-  text-decoration: underline;
+  text-decoration: underline;                           /* Sottolinea il testo del titolo */
 }
 
-#titoli h4
+.titoli h4                                             /* Sotto-selettore h4 dentro .titoli */
 {
-  color: var(--zuegg-blue);
-  font-weight:semibold;
-  font-family: Arial, Helvetica, sans-serif;
-  margin-bottom: 2rem;
-  text-align: center;
+  color: var(--zuegg-blue);                            /* Imposta il colore blu del brand */
+  font-weight:600;                                     /* Imposta lo spessore del carattere semigrassetto */
+  font-family: Arial, Helvetica, sans-serif;           /* Applica il font di fallback Arial */
+  margin-bottom: 2rem;                                 /* Aggiunge spazio inferiore */
+  text-align: center;                                  /* Allinea il testo al centro */
 }
 
-#titoli,
-#paragrafi,
-#paragrafi2 {
-  text-align: center;
-}
+.titoli,                                               /* Selettore multiplo: blocco titoli */
+.paragrafi,                                            /* Selettore multiplo: blocco paragrafi */
+.paragrafi2 {                                          /* Selettore multiplo: secondo blocco paragrafi */
+  text-align: center;                                  /* Allinea tutto il testo al centro */
+}                                                   
 
-#paragrafi p,
-#paragrafi2 p {
-  margin-bottom: 1rem;
-}
+.paragrafi p,                                          /* Paragrafi interni alla classe .paragrafi */
+.paragrafi2 p {                                        /* Paragrafi interni alla classe .paragrafi2 */
+  margin-bottom: 1rem;                                 /* Aggiunge margine inferiore ai paragrafi */
+}                                                   
 
 
 /*-------------------------------------------------------------------------------*/
-  SEZIONE SOSTENIBILITA' IN BREVE
+  SEZIONE SOSTENIBILITA IN BREVE
 /*-----------------------------------------------------------------------------*/
-.breve,
-.breve-card
-{
-  border: 1px solid var(--zuegg-border);
-  border-radius: 1.75rem;
-  transition: transform 0.3s ;
-  text-align: center;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  background-image: var(--zuegg-obiettivi-bg-image); /* Immagine di sfondo delle card */
-  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.08);
-  display: flex;
-  flex-direction: column;
-  padding: 1.5rem 1.35rem 1.75rem;
-}
-
+.breve,                                                /* Selettore multiplo */
+.breve-card                                            /* Selettore multiplo */
+{                                                     
+  border: 1px solid var(--zuegg-border);               /* Bordo sottile con colore del brand */
+  background-color:var( --background-card);            /* Colore di sfondo della card */
+  border-radius: 1.75rem;                              /* Arrotondamento accentuato degli angoli */
+  transition: transform 0.3s ;                         /* Transizione fluida per l'effetto hover */
+  text-align: center;                                  /* Allinea il testo al centro */
+  width: 100%;                                         /* Larghezza estesa al 100% */
+  height: 100%;                                        /* Altezza estesa al 100% */
+  overflow: hidden;                                    /* Nasconde i contenuti che debordano */
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.08);     /* Ombra delicata per profondità */
+  display: flex;                                       /* Attiva il layout flessibile */
+  flex-direction: column;                              /* Dispone gli elementi in colonna */
+  padding: 1.5rem 1.35rem 1.75rem;                     /* Spaziatura interna della card */
+}                                                     
 /* -----------------------------------------------------------------------------
    SEZIONE PUZZLE
-   -------------------------------------------------------------------------- */
-.puzzle
-.z-puzzle
-{
-  display: flex;
-  border-radius: var(--puzzle-radius);
-  transition: transform 0.3s;
-}
+  -------------------------------------------------------------------------- */
+.z-puzzle                                              /* Contenitore principale del puzzle */
+{                                                      
+  display: column;                                     /* Nota: display column non standard, definisce layout in colonna */
+  border-radius: var(--puzzle-radius);                 /* Raggio di arrotondamento ripreso dalle variabili */
+  transition: transform 0.3s;                          /* Transizione fluida per la trasformazione */
+}                                                      
 
-.z-puzzle-header
- {
-  min-height: 220px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-}
+.z-puzzle-header                                       /* Intestazione del componente puzzle */
+ {                                                     
+  min-height: 220px;                                   /* Altezza minima dell'intestazione */
+  display: flex;                                       /* Attiva il layout flessibile */
+  align-items: center;                                 /* Allinea verticalmente al centro */
+  justify-content: center;                             /* Allinea orizzontalmente al centro */
+  padding: 0;                                          /* Rimuove i margini interni */
+}                                                   
 
-.z-puzzle-header img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
+.z-puzzle-header img                                   /* Immagine all'interno dell'header del puzzle */
+{                                                     
+  width: 100%;                                         /* Larghezza massima al 100% */
+  height: 100%;                                        /* Altezza massima al 100% */
+  object-fit: cover;                                   /* Adatta l'immagine coprendo l'area */
+  display: block;                                      /* Rende l'immagine un blocco */
+}                                                     
 
-.z-puzzle-body {
-  padding: 0.1rem 0.3rem 0.75rem;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  flex: 1 1 auto;
-}
+.z-puzzle-body                                         /* Corpo principale del puzzle */
+{                                                     
+  padding: 0.1rem 0.3rem 0.75rem;                      /* Spaziatura interna ridotta */
+  display: flex;                                       /* Attiva il layout flessibile */
+  flex-direction: column;                              /* Dispone gli elementi in colonna */
+  text-align: center;                                  /* Allinea il testo al centro */
+  flex: 1 1 auto;                                      /* Permette al blocco di espandersi */
+}                                                     
 
-.z-puzzle-body h3 {
-  min-height: 60px;
-  margin-bottom: 0rem;
-  color: var(--zuegg-blue);
-  font-family: "Century Gothic", AppleGothic, sans-serif;
-  font-size: 0.8rem;
-  line-height: 1.5;
-  font-weight: bold;
-  text-align: center;
-}
+.z-puzzle-body h3                                      /* Intestazione h3 nel corpo del puzzle */
+{                                                     
+  min-height: 70px;                                    /* Altezza minima per uniformare i titoli */
+  margin-bottom: 0rem;                                 /* Rimuove il margine inferiore */
+  color: var(--zuegg-blue);                            /* Imposta il colore blu del brand */
+  font-family: Century Gothic, AppleGothic, sans-serif;/* Applica il font tipografico specifico */
+  font-size: 0.8rem;                                   /* Riduce la dimensione del testo */
+  line-height: 1.5;                                    /* Altezza della riga per leggibilità */
+  font-weight: bold;                                   /* Rende il testo in grassetto */
+  text-align: center;                                  /* Allinea il testo al centro */
+}                                                     
 
-.z-puzzle-body #paragrafi2 {
-  font-family: "times new roman", Helvetica, sans-serif;
-  font-size: 0.9rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  flex: 1 1 auto;
-}
+.z-puzzle-body #paragrafi2                             /* Elemento con ID paragrafi2 dentro il puzzle */
+{                                                     
+  font-family: Arial, Helvetica, sans-serif;           /* Applica il font Arial */
+  font-size: 0.9rem;                                   /* Imposta la dimensione del testo */
+  display: flex;                                       /* Attiva il layout flessibile */
+  flex-direction: column;                              /* Dispone gli elementi in colonna */
+  justify-content: flex-start;                         /* Allinea i contenuti dall'inizio */
+  flex: 1 1 auto;                                      /* Espande flessibilmente il contenitore */
+}                                                    
 
 /* -----------------------------------------------------------------------------
    SEZIONE OBIETTIVI
-   -------------------------------------------------------------------------- */
-#obiettivi-section 
-{
-  width: 90%;
-  margin: 0 auto; /* 0 sopra/sotto, auto destra/sinistra */
-  font-size: 16px; /* grandezza del testo */
-  font-family:'montserrat-plan', sans-serif;/*applicazione del font del @font-face*/
-  padding: 20px;
-  background-image: var(--zuegg-obiettivi-bg-image); /* Immagine di sfondo */
-  border: 1.5px solid var(--zuegg-blue);
-  text-align: center;
-}
+  -------------------------------------------------------------------------- */
+.obiettivi-section                                     /* Contenitore principale della sezione obiettivi */
+{                                                     
+  width: 90%;                                          /* Occupa il 90% della larghezza disponibile */
+  margin: 0 auto;                                     /* Centra orizzontalmente il blocco */
+  font-size: 16px;                                      /* Imposta la dimensione base del testo */
+  font-family:'montserrat-plan', sans-serif;            /* Applica il font personalizzato */
+  padding: 20px;                                       /* Spaziatura interna generale */
+  background-image: var(--zuegg-obiettivi-bg-image);   /* Applica l'immagine di sfondo dedicata */
+  border: 1.5px solid var(--zuegg-blue);               /* Bordo esterno con colore blu brand */
+  text-align: center;                                  /* Allinea il testo al centro */
+}                                                    
+.obiettivi-container                                   /* Contenitore interno per le colonne degli obiettivi */
+{                                                     
+  display: flex;                                        /* Mette le colonne una accanto all'altra */ 
+  justify-content: space-around;                           /* Distribuisce lo spazio attorno alle colonne */
+  align-items: flex-start;                               /* Allinea gli elementi sul bordo superiore */
+  gap: 40px;                                            /* Definisce lo spazio fisso tra le colonne */
+  margin-top: 30px;                                    /* Margine superiore di stacco */
+}                                                   
 
-.obiettivi-container 
-{
-        
-    display: flex; /* Mette le colonne una accanto all'altra */
-    justify-content: space-around; /* Distanzia le colonne tra loro */
-    align-items: flex-start; /* Allinea il testo in alto */
-    gap: 40px; /* Spazio tra le due colonne */
-    margin-top: 30px;
-}
+.colonna-obiettivi                                     /* Singola colonna all'interno degli obiettivi */
+{                                                     
+    flex: 1;                                           /* Rende le colonne di misura  uguale */
+    text-align: left;                                  /* Allinea il testo interno a sinistra */
+}                                                   
 
-.colonna-obiettivi 
-{
-    flex: 1; /* Le colonne occupano lo stesso spazio */
-    text-align: left; /* Il testo dentro la colonna resta a sinistra */
-}
-
-.colonna-obiettivi img 
-{
-    width: 100px; /* Imposta la dimensione dell'icona */
-    margin-bottom: 20px;
-}
+.colonna-obiettivi img                                 /* Immagine/icona dentro la colonna obiettivi */
+{                                                     
+    width: 100px;                                       /* Imposta una larghezza fissa per l'icona */
+    margin-bottom: 20px;                               /* Spazio inferiore sotto l'icona */
+}                                                    
 
 /* -----------------------------------------------------------------------------
    SEZIONE CARD E COMPONENTI CONTENITIVE
-   -------------------------------------------------------------------------- */
-.card,
-.z-card 
-{
-  border: 1px solid var(--zuegg-border);
-  border-radius: var(--zuegg-radius);
-  transition: transform 0.3s 
-}
+  -------------------------------------------------------------------------- */
+.card,                                                 /* Selettore multiplo: card standard */
+.z-card                                                /* Selettore multiplo: card brandizzate */
+{                                                     
+  border: 1px solid var(--zuegg-border);               /* Bordo sottile con colore del brand */
+  border-radius: var(--zuegg-radius);                  /* Arrotondamento degli angoli con variabile */
+  transition: transform 0.3s;                          /* Transizione fluida per trasformazioni */
+}                                                    
 
-.z-card 
-{
-  width: 100%;
-  height: 100%;
-  border: 0;
-  border-radius: 1.75rem;
-  overflow: hidden;
-  background-color: #efefef;
-  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.08);
-  display: flex;
-  flex-direction: column;
-}
+.z-card                                                /* Stile specifico per la card brandizzata */
+{                                                     
+  width: 100%;                                         /* Larghezza estesa al 100% */
+  height: 100%;                                        /* Altezza estesa al 100% */
+  border: 0;                                           /* Rimuove il bordo predefinito */
+  border-radius: 1.75rem;                              /* Arrotondamento accentuato degli angoli */
+  overflow: hidden;                                    /* Nasconde i contenuti fuori dai bordi */
+  background-color: #efefef;                           /* Colore di sfondo neutro */
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.08);     /* Ombra per dare effetto profondità */
+  display: flex;                                       /* Attiva il layout flessibile */
+  flex-direction: column;                              /* Dispone i contenuti in colonna */
+}                                                    
 
-.z-card-header,
-.z-card-header-a,
-.z-card-header-b 
-{
-  min-height: 220px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-}
+.z-card-header,                                        /* Selettore multiplo: header card */
+.z-card-header-a,                                      /* Selettore multiplo: header card variante a */
+.z-card-header-b                                       /* Selettore multiplo: header card variante b */
+{                                                     
+  min-height: 220px;                                   /* Altezza minima dell'header */
+  display: flex;                                       /* Attiva il layout flessibile */
+  align-items: center;                                 /* Allinea verticalmente al centro */
+  justify-content: center;                             /* Allinea orizzontalmente al centro */
+  padding: 0;                                          /* Rimuove spaziatura interna */
+}                                                    
 
-.z-card-header img,
-.z-card-header-a img,
-.z-card-header-b img 
-{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
+.z-card-header img,                                    /* Selettore multiplo: immagini negli header */
+.z-card-header-a img,                                  /* Selettore multiplo: immagini header variante a */
+.z-card-header-b img                                   /* Selettore multiplo: immagini header variante b */
+{                                                     
+  width: 100%;                                         /* Larghezza massima al 100% */
+  height: 100%;                                        /* Altezza massima al 100% */
+  object-fit: cover;                                   /* Adatta l'immagine coprendo l'area */
+  display: block;                                      /* Rende l'immagine un blocco */
+}                                                    
 
-.z-card-body 
-{
-  background-color: #f3f3f3;
-  padding: 1.5rem 1.35rem 1.75rem;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  flex: 1 1 auto;
-}
+.z-card-body                                           /* Corpo della card brandizzata */
+{                                                     
+  background-color:var( --background-card);            /* Colore di sfondo dinamico della card */
+  padding: 1.5rem 1.35rem 1.75rem;                     /* Spaziatura interna del corpo */
+  display: flex;                                       /* Attiva il layout flessibile */
+  flex-direction: column;                              /* Dispone gli elementi in colonna */
+  text-align: center;                                  /* Allinea il testo al centro */
+  flex: 1 1 auto;                                      /* Espansione flessibile automatica */
+}                                                    
 
-.z-card-body h3 
-{
-  min-height: 100px;
-  margin-bottom: 1.5rem;
-  color: var(--zuegg-blue);
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1rem;
-  line-height: 1.5;
-  font-weight: 700;
-  text-align: center;
-}
+.z-card-body h3                                        /* Titolo h3 nel corpo della card */
+{                                                     
+  min-height: 100px;                                   /* Altezza minima per uniformare i titoli */
+  margin-bottom: 1.5rem;                               /* Margine inferiore di stacco */
+  color: var(--zuegg-blue);                            /* Imposta il colore blu brand */
+  font-family: Arial, Helvetica, sans-serif;           /* Applica il font Arial */
+  font-size: 1rem;                                     /* Imposta la dimensione del testo a 1rem */
+  line-height: 1.5;                                    /* Altezza della riga per leggibilità */
+  font-weight: 700;                                    /* Rende il testo in grassetto */
+  text-align: center;                                  /* Allinea il testo al centro */
+}                                                    
 
-.z-card-body #paragrafi2 
-{
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  flex: 1 1 auto;
-}
+.z-card-body #paragrafi2                               /* Blocco paragrafi2 nel corpo della card */
+{                                                     
+  display: flex;                                       /* Attiva il layout flessibile */
+  flex-direction: column;                              /* Dispone gli elementi in colonna */
+  justify-content: flex-start;                         /* Allinea i contenuti dall'inizio */
+  flex: 1 1 auto;                                      /* Espansione flessibile automatica */
+}                                                    
 
-.z-card-body #paragrafi2 p 
-{
-  margin-bottom: 0;
-  color: #1f1f1f;
-  font-size: 0.98rem;
-  line-height: 1.9;
-  text-align: center;
-}
+.z-card-body #paragrafi2 p                             /* Paragrafi interni a paragrafi2 nella card */
+{                                                     
+  margin-bottom: 0;                                    /* Rimuove il margine inferiore */
+  color: #1f1f1f;                                      /* Imposta un colore scuro per il testo */
+  font-size: 0.98rem;                                  /* Imposta la dimensione del carattere */
+  line-height: 1.9;                                    /* Altezza della riga ampia per facilitare la lettura */
+  text-align: center;                                  /* Allinea il testo al centro */
+}                                                    
 
 /* Colori intestazioni card */
-.color-1a { background-color: #d8a62c; }
-.color-2a { background-color: #c61b2c; }
-.color-3a { background-color: #33b5db; }
-.color-4a { background-color: #e5672f; }
+.color-1a { background-color: #d8a62c; }                 /* Imposta il colore di sfondo variante 1a */
+.color-2a { background-color: #c61b2c; }                 /* Imposta il colore di sfondo variante 2a */
+.color-3a { background-color: #33b5db; }                 /* Imposta il colore di sfondo variante 3a */
+.color-4a { background-color: #e5672f; }                 /* Imposta il colore di sfondo variante 4a */
 
-.color-1b { background-color: #e5672f; }
-.color-2b { background-color: #bf8d24; }
-.color-3b { background-color: #3f8343; }
-.color-4b { background-color: #63b33e; }
+.color-1b { background-color: #bb8c1f; }                 /* Imposta il colore di sfondo variante 1b */
+.color-2b { background-color: #488043; }                 /* Imposta il colore di sfondo variante 2b */
+.color-3b { background-color: #64b13f; }                 /* Imposta il colore di sfondo variante 3b */
+.color-4b { background-color: #2b618d; }                 /* Imposta il colore di sfondo variante 4b */
 
-@media (max-width: 991.98px) 
-{
-  .z-card-body h3 
-  {
-    min-height: auto;
-  }
-}
+@media (max-width: 991.98px)                           /* Media query per dispositivi tablet e mobile */
+{                                                      /* Apertura blocco media query */
+  .z-card-body h3                                      /* Selettore titolo h3 della card su mobile */
+  {                                                     
+    min-height: auto;                                  /* Annulla l'altezza minima su schermi piccoli */
+  }                                                    
+}                                                      /* Chiusura blocco media query */
 
 /* -----------------------------------------------------------------------------
    SEZIONE DOWNLOAD
-   -------------------------------------------------------------------------- */
+  -------------------------------------------------------------------------- */
 
-/* Rimuove i punti elenco standard e azzera i margini */
-.download-list 
-{
-  list-style: none;
-  margin: 0;
-  }
+.download-list                                         /* Lista dei download */
+{                                                     
+  list-style: none;                                    /* Rimuove i pallini della lista */
+  margin: 0;                                           /* Azzera i margini esterni */
+  }                                                  
 
 /* Stile base per tutte le righe */
-.download-list li 
-{
-  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.08);
-  padding: 14px 20px;
-  background-color: #f3f3f3;
-  border-bottom: 1px solid #e2e8f0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-radius: 1.5rem;
-}
+.download-list li                                      /* Singolo elemento della lista download */
+{                                                     
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.08);     /* Ombra per dare profondità alla riga */
+  padding: 14px 20px;                                  /* Spaziatura interna della riga */
+  background-color: #f3f3f3;                           /* Sfondo grigio chiaro */
+  border-bottom: 1px solid #e2e8f0;                    /* Bordo inferiore di separazione */
+  display: flex;                                       /* Attiva il layout flessibile */
+  justify-content: space-between;                      /* Spazia gli elementi ai lati opposti */
+  align-items: center;                                 /* Allinea verticalmente al centro */
+  border-radius: 1.5rem;                               /* Arrotondamento pronunciato della riga */
+}                                                    
 
 /* Effetto al passaggio del mouse su qualsiasi riga */
-.download-list li:hover 
-{
-  background-color: #81e3f02f;
-  color: var(--zuegg-blue);
-  font-weight: bold;
-  border: 1px solid var(--zuegg-blue);
-}
+.download-list li:hover                                /* Effetto hover sull'elemento della lista */
+{                                                     
+  background-color: #81e3f02f;                         /* Sfondo azzurro semitrasparente al passaggio */
+  color: var(--zuegg-blue);                            /* Cambia il colore del testo in blu brand */
+  font-weight: bold;                                   /* Rende il testo in grassetto */
+  border: 1px solid var(--zuegg-blue);                 /* Applica un bordo color blu brand */
+}                                                    
 
-.btn-download {
+.btn-download {                                        /* Pulsante di download principale */
   /* Layout e posizionamento */
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px; /* Spazio tra icona e testo */
+  display: inline-flex;                                /* Dispone in maniera flessibile gli elementi interni in linea */
+  align-items: center;                                 /* Allinea verticalmente al centro */
+  justify-content: center;                             /* Allinea orizzontalmente al centro */
+  text-align: center;                                   /* Forza il testo multilinea a centrarsi */
+  gap: 15px; /* Spazio tra icona e testo */           /* Definisce lo spazio tra l'icona e il testo */
 
   /* Aspetto del pulsante */
-  background-color: #0066cc;
-  color: #ffffff;
-  padding: 12px 24px;
-  border-radius: 8px;
-  text-decoration: none; /* Rimuove la sottolineatura dal link */
-  font-family: system-ui, -apple-system, sans-serif;
-  font-weight: 600;
-  font-size: 16px;
+  background-color: #0066cc;                           /* Colore di sfondo blu */
+  color: #ffffff;                                      /* Colore del testo bianco */
+  padding: 12px 24px;                                  /* Spaziatura interna del pulsante */
+  border-radius: 8px;                                  /* Arrotondamento degli angoli del pulsante */
+  text-decoration: none;                                 /* Rimuove la sottolineatura predefinita */
+  font-family: system-ui, -apple-system, sans-serif;     /* Applica font di sistema moderni */
+  font-weight: 600;                                    /* Imposta il testo in semigrassetto */
+  font-size: 16px;                                     /* Imposta la dimensione del testo a 16px */
+
 
   /* Transizione fluida per l'effetto hover */
-  transition: background-color 0.2s ease, transform 0.1s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
+  transition: background-color 0.2s ease, transform 0.1s ease; /* Transizioni fluide per colore e posizione */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);             /* Ombra leggera sotto il pulsante */
+}                                                    
 
 /* Effetto al passaggio del mouse */
-.btn-download:hover {
-  background-color: var(--zuegg-blue);
-  color:  #f3f3f3;
-  transform: translateY(-2px); /* Effetto "sollevamento" */
+.btn-download:hover {                                  /* Effetto hover sul pulsante di download */
+  background-color: var(--zuegg-blue);                 /* Cambia il colore di sfondo con il blu brand */
+  color: var(--background-card);                       /* Cambia il colore del testo in grigio chiaro */
+  transform: translateY(-2px);                        /* Effetto che solleva leggermente il pulsante */
   
-}
+}                                                    
 
 /* Effetto al click */
-.btn-download:active {
-  transform: translateY(0);
-}
+.btn-download:active {                                 /* Effetto attivo/click sul pulsante */
+  transform: translateY(0);                            /* Riporta il pulsante alla posizione originale */
+}                                                    
 /* -----------------------------------------------------------------------------FINE-------------------------------------------------------------------------- */
 
