@@ -23,14 +23,14 @@
 <body>
 
 <!-- =========================================================
-    HEADER ISTITUZIONALE
+    HEADER
 ========================================================== -->
     <header id="header" class="sticky-top shadow-sm"> <!--Testata che rimane fissa in alto durante lo scorrimento con ombra leggera-->
         <div class="container-fluid px-3 px-lg-4"> <!--Contenitore fludio che occupa tutta la larghezza con margini orizzontali adattivi-->
             <div class="d-flex justify-content-start align-items-center py-2">  <!--Contenitore flessibile con allineamento a sinistra e verticalmente centrale con spaziatura verticale-->
                 <img
                     id="logo"
-                    src="./images/logo-zuegg.svg"
+                    src="./images/logo-zuegg.svg"  
                     alt="Logo Zuegg"
                     class="img-fluid">             <!-- Immagine responsiva che utilizza le precedenti impostazioni-->
             </div> 
@@ -44,7 +44,7 @@
          Bootstrap e con il riferimento visivo allegato.
 ========================================================= -->
     <section class="hero-top py-0"><!--Sezione d'impatto con padding verticale azzerato-->
-        <div class="container-fluid px-0"> <!--Contenitore fluido senza margini interni per coprire intera larchezza schermo-->
+        <div class="container-fluid px-0"> <!--Contenitore fluido senza margini interni per coprire intera larghezza schermo-->
             <div class="position-relative overflow-hidden"> <!--Contenitore con posizionamento relativo e proprietà di overflow nascosto per contenere l'immagine e il box sovrapposto-->
                 <img
                     src="./images/pesche-1.jpg" alt="Pesche Zuegg" class="hero-img w-100 d-block" alt="Pesche Zuegg"> <!--Immagine di sfondo della hero, larga al 100% e impostata come blocco-->
@@ -146,7 +146,7 @@
         <div class="row g-4 justify-content-center"> <!--Attivazione riga Boostrap con spaziatura fissa tra gli elementi (g-4) e centrata-->
             
             <!-- Card 1: Ambiente -->
-            <div class="col-12 col-md-6 col-lg-3 col-xxl-3 d-flex mb-4"> <!--Configurazione della griglia responsive,boccupano 12 spazi su mobile, 6 su tablet, 3 su desktop e schermi extra-large. La classe d-flex assicura che le card figlie possano espandersi uniformemente in altezza-->
+            <div class="col-12 col-md-6 col-lg-3 col-xxl-3 d-flex mb-4"> <!--Configurazione della griglia responsive, occupano 12 spazi su mobile, 6 su tablet, 3 su desktop e schermi extra-large. La classe d-flex assicura che le card figlie possano espandersi uniformemente in altezza-->
                 <div class="breve-card breve-card-body"> <!--Componente personalizzato della card che ospita a sua volta il titolo (<h3>) e il paragrafo descrittivo (<p>)-->
                    <div class="titoli mb-4"> <!--Classe personalizzata con spazio in basso-->
                         <h3>Ambiente</h3>
@@ -197,7 +197,7 @@
     </div>
 </section>
 <!--======================================================
-    SEZIONE PUZZLE
+    SOTTO SEZIONE PUZZLE
 =======================================================-->
             <div class="row align-items-start"> <!--Attivazione griglia Bootstrap con allineamento verticale partendo dalla stessa altezza-->
             </div>
@@ -212,7 +212,7 @@
                             <div class="z-puzzle-body"> <!--Contenitore del testo interno, composto da un titolo di terzo livello e blocco di testo-->
                                 <h3>IL RIPRISTINO DEL PAESAGGIO COME BASE PER LA RESILIENZA AGROALIMENTARE</h3>
                                 <div class="paragrafi2">
-                                    <p>È uno strumento principe per mitigare il degrado del suolo e accrescere la resilienza della catena di approvvigionamento. La degradazione del capitale naturale può essere contrastata con soluzioni basate sulla natura             (Nature-based Solutions − NbS), come il sostegno all’impollinazione, il recupero della qualità del suolo, il miglioramento della qualità dell’acqua e il sequestro naturale del carbonio.</p>
+                                    <p>È uno strumento principe per mitigare il degrado del suolo e accrescere la resilienza della catena di approvvigionamento. La degradazione del capitale naturale può essere contrastata con soluzioni basate sulla natura (Nature-based Solutions − NbS), come il sostegno all’impollinazione, il recupero della qualità del suolo, il miglioramento della qualità dell’acqua e il sequestro naturale del carbonio.</p>
                                 </div>
                             </div>
                         </article>
@@ -290,11 +290,11 @@
                     </div>
             </section>
 
-        <!-- =====================================================
-             SEZIONI OBIETTIVI
-             -----------------------------------------------------
-             sezioni multicolonna con Bootstrap e colonne responsive.
-             ===================================================== -->
+<!-- =====================================================
+    SEZIONE IL NOSTRO IMPEGNO PER IL DOMANI
+-----------------------------------------------------
+    sezioni multicolonna con Bootstrap e colonne responsive.
+===================================================== -->
     <section class="obiettivi-section" class="py-4 py-lg-5"><!-- sezione personalizzata con spaziature differenziate tra dispositivi standard oppure large-->
         <div class="container">
             <div class="row justify-content-center mb-4">
@@ -306,7 +306,7 @@
                 </div>
 
                 <div class="row g-4 align-items-start"> <!--Attivazione riga Boostrap con margine tra le colonne (gutter-4) e con allineamento verticale uguale per tutti gli elementi-->
-                    <div class="col-12 col-md-6" col-lg-6> <!--Responsività a seconda dei dispositivi-->
+                    <div class="col-12 col-md-6 col-lg-6"> <!--Responsività a seconda dei dispositivi-->
                         <article class="colonna-obiettivi h-100"> <!--Classe personalizzata con altezza 100%-->
                             <img src="./images/climate-change.png" alt="Icona clima"> <!--Immagine-->
                             <p><b>Strategia di sostenibilità lungo l’intera catena del valore</b></p>
@@ -317,7 +317,7 @@
                         </article> 
                     </div>
 
-                    <div class="col-12 col-md-6" col-lg-6> <!--Responsività a seconda dei dispositivi-->
+                    <div class="col-12 col-md-6 col-lg-6"> <!--Responsività a seconda dei dispositivi-->
                         <article class="colonna-obiettivi h-100"> <!--Classe personalizzata con altezza 100%-->
                             <img src="./images/environment.png" alt="Icona ambiente"> <!--Immagine-->
                             <p><b>Strategia di decarbonizzazione e mitigazione climatica</b></p>
@@ -564,9 +564,9 @@
             </div>
     </section>
 </main>
-    <!-- =========================================================
-         FOOTER CON LOGO
-         ========================================================= -->
+<!-- =========================================================
+    FOOTER CON LOGO
+========================================================= -->
     <footer id="footer">
        <div class="container text-center pt-5 pb-5"><!--Contenitore Bootstrap che allinea centralmente il contenuto aggiungendo riempimenti superiore ed inferiore con padding-->
             <img id="logo" src="./images/logo-zuegg.svg" alt="Logo Zuegg"> <!--Immagine-->

@@ -1,5 +1,6 @@
 /* =============================================================================
    ======================ZUEGG — SOSTENIBILITA'=================================
+   ===============GABRIELE GORINI MATRICOLA 0312300755==========================
    ========================================================================== */
 
 /* -----------------------------------------------------------------------------
@@ -38,7 +39,7 @@ body {                                                            /* Selettore p
 }
 
 .text-zuegg {                                                   /* Classe di utilità per testi brandizzati */
-  color: var(--zuegg-blue) !important;                          /* Forza l'applicazione del colore blu brand in maniera prioritaria*/
+  color: var(--zuegg-blue);                                     /* Forza l'applicazione del colore blu brand in maniera prioritaria*/
   font-family: 'zuegg-font', sans-serif;                        /* Applica il font personalizzato */
 }
 
@@ -142,7 +143,7 @@ p,                                                              /* Selettore mul
 
 
 /*-------------------------------------------------------------------------------*/
-  SEZIONE SOSTENIBILITA IN BREVE
+  SOTTO SEZIONE SOSTENIBILITA IN BREVE
 /*-----------------------------------------------------------------------------*/
 .breve,                                                /* Selettore multiplo */
 .breve-card                                            /* Selettore multiplo */
@@ -161,7 +162,7 @@ p,                                                              /* Selettore mul
   padding: 1.5rem 1.35rem 1.75rem;                     /* Spaziatura interna della card */
 }                                                     
 /* -----------------------------------------------------------------------------
-   SEZIONE PUZZLE
+   SOTTO SEZIONE PUZZLE
   -------------------------------------------------------------------------- */
 .z-puzzle                                              /* Contenitore principale del puzzle */
 {                                                      
@@ -219,7 +220,7 @@ p,                                                              /* Selettore mul
 }                                                    
 
 /* -----------------------------------------------------------------------------
-   SEZIONE OBIETTIVI
+   SEZIONE IL NOSTRO IMPEGNO PER IL DOMANI
   -------------------------------------------------------------------------- */
 .obiettivi-section                                     /* Contenitore principale della sezione obiettivi */
 {                                                     
